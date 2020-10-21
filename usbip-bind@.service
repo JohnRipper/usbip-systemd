@@ -10,7 +10,7 @@ Type=simple
 EnvironmentFile=/etc/usbip/bind-devices/%i.conf
 ExecStart=/bin/sh -c "/usr/bin/usbip bind -b $(/usr/bin/usbip list -p -l | grep '#usbid=$USBIP_DEVICE#' | cut '-d#' -f1 | cut '-d=' -f2)"
 RemainAfterExit=yes
-ExecStop=/bin/sh -c "/usr/bin/usbip unbind -b $(/usr/bin/usbip list -p -l | grep '#usbid=$USBIP_DEVICE#' | cut '-d#' -f1 | cut '-d=' -f2))"
+ExecStop=/bin/sh -c "/usr/bin/usbip unbind -b $(/usr/bin/usbip list -p -l | grep '#usbid=$USBIP_DEVICE#' | cut '-d#' -f1 | cut '-d=' -f2)"
 Restart=on-failure
 
 [Install]
